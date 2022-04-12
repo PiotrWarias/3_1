@@ -1,2 +1,6 @@
 Krzysztof 20
 Janusz 40
+Piotr 20
+Bartek 35
+Piotr 56
+kacper 54
