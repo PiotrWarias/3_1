@@ -30,7 +30,30 @@ public class Service1 {
     return ret;
   }
 
-  public Student findStudentByName(String name) {
-    return null;
+ public Collection<Student> findStudentByName(String name) throws IOException {
+  String[] words = null;
+  var lista = new ArrayList<Student>();
+  var f = new FileReader("db.txt");
+  var reader = new BufferedReader(f);
+  String s = "";
+  int count = 0;
+  while ((s=reader.readLine())!=null)
+  {
+    words=s.split(" ");
+    for(String word : words)
+    {
+      if(word.equals(name))
+    {
+      System.out.println(s + ", ");
+      count++;
+    }
+    }
+  }
+if (count==0)
+  {
+    System.out.println("Brak studentów o imieniu "+name);
+  }
+reader.close();
+return lista;
   }
 }
